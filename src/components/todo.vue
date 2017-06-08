@@ -29,11 +29,15 @@
 			</div>
 		</nav>
 		<div class="content-scrollable list-items"><!--容器下半部分-->
+			<div v-for="item in items">
+				<item :item="item"></item>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import item from "./Item";
 	export default {
 		data() {
 			return {
@@ -57,6 +61,9 @@
                 }); // 当用户点击回车时候 ，给items的值新增一个对象，this.text 即输入框绑定的值
                 this.text = ''; //初始化输入框的值。
             }
+		},
+		components: {
+			item
 		}
 	}
 </script>
